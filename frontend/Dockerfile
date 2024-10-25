@@ -1,23 +1,23 @@
 # Usa una imagen base de Node.js
-FROM node:18 as frontend
+FROM node:16 as frontend
 
-# Establece el directorio de trabajo
+# Crea un directorio de trabajo
 WORKDIR /app
 
-# Copia el archivo de requisitos del frontend
-COPY frontend/requirements.txt ./requirements.txt
+# Copia los archivos de requisitos del frontend
+COPY requirements.txt ./requirements.txt
 
-# Instala las dependencias necesarias (ajusta según tu stack)
+# Instala las dependencias del frontend
 RUN npm install
 
-# Copia el código fuente del frontend
-COPY frontend/ ./frontend/
+# Copia todo el código fuente del frontend en el contenedor
+COPY . .
 
-# Construye la aplicación
+# Construye la aplicación del frontend (ajusta este comando según sea necesario)
 RUN npm run build
 
-# Exponer el puerto en el que la aplicación escuchará (ajusta según el puerto)
+# Exponer el puerto en el que la aplicación del frontend escuchará
 EXPOSE 3000
 
-# Comando para ejecutar la aplicación
+# Comando para ejecutar la aplicación del frontend
 CMD ["npm", "start"]

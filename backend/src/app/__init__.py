@@ -11,7 +11,7 @@ import os
 from dotenv import load_dotenv
 from src.swagger_init import initialize_swagger
 from src.web.controllers.api.planes import planes_blueprint
-from backend.serve_frontend import serve_frontend
+from serve_frontend import serve_frontend
 
 load_dotenv()
 
