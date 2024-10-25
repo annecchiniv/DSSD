@@ -1,27 +1,51 @@
-FROM python:3.11
+# Usa una imagen base de Python
+ARG PYTHON_VERSION=3.10
+FROM python:${PYTHON_VERSION}-slim as base
+
+# Prevents Python from writing pyc files.
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Keeps Python from buffering stdout and stderr.
+ENV PYTHONUNBUFFERED=1
+
+# Crea un directorio de trabajo
+WORKDIR /app
+
+# Crea un usuario no privilegiado para ejecutar la aplicación
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
+
+# Copia los archivos de requisitos
+COPY backend/requirements.txt ./backend/
+COPY frontend/requirements.txt ./frontend/
 
 # Instala las dependencias necesarias
 RUN apt-get update && apt-get install -y \
     build-essential \
-    libmysqlclient-dev \
+    libmariadb-dev \
+    pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
-# Establece el directorio de trabajo
-WORKDIR /app
+# Descarga e instala las dependencias de Python del backend
+RUN --mount=type=cache,target=/root/.cache/pip \
+    python -m pip install --upgrade pip \
+    && python -m pip install -r ./backend/requirements.txt
 
-# Copia los archivos de tu proyecto
+# Copia el código fuente en el contenedor
 COPY . .
 
-# Crea un entorno virtual y activa
-RUN python -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-
-# Instala las dependencias de Python
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+# Cambia al usuario no privilegiado
+USER appuser
 
 # Exponer el puerto en el que la aplicación escuchará
 EXPOSE 8000
 
-# Comando por defecto para ejecutar la aplicación
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "app:app"]
+# Comando para ejecutar la aplicación
+CMD gunicorn -w 4 -b 0.0.0.0:8000 backend.app:app
