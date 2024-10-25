@@ -11,6 +11,7 @@ import os
 from dotenv import load_dotenv
 from src.swagger_init import initialize_swagger
 from src.web.controllers.api.planes import planes_blueprint
+from serve_frontend import serve_frontend
 
 load_dotenv()
 
@@ -46,5 +47,6 @@ def create_app():
     app.register_blueprint(api_bp, url_prefix='/api')
 
     initialize_swagger(app)
+    serve_frontend(app)
     
     return app

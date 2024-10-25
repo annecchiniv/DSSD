@@ -1,0 +1,22 @@
+{
+    "build": {
+      "dockerfilePath": "Dockerfile",
+      "context": "."
+    },
+    "deploy": {
+      "port": "8000"
+    },
+    "services": [
+      {
+        "name": "backend",
+        "dockerfilePath": "backend/Dockerfile",
+        "context": "backend"
+      },
+      {
+        "name": "frontend",
+        "dockerfilePath": "frontend/Dockerfile",
+        "context": "frontend"
+      }
+    ]
+  }
+  
