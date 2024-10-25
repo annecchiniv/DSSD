@@ -43,7 +43,7 @@ COPY . .
 USER appuser
 
 # Exponer el puerto en el que la aplicación escuchará
-EXPOSE 8000
+EXPOSE 8080
 
 # Comando para ejecutar la aplicación
 CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "app:app"]
