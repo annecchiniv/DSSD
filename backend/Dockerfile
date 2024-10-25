@@ -33,8 +33,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Descarga e instala las dependencias de Python del backend
-RUN --mount=type=cache,target=/root/.cache/pip \
-    python -m pip install --upgrade pip \
+RUN python -m pip install --upgrade pip \
     && python -m pip install -r ./requirements.txt
 
 # Copia el código fuente en el contenedor
