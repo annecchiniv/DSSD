@@ -1,0 +1,6 @@
+# node_modules
+node_modules/
+/venv
+# Ignorar la carpeta de entorno virtual
+backend/venv/
+backend/.env

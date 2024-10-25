@@ -1,0 +1,145 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    /*display: flex; /* Usar flexbox */
+    /*flex-direction: column; /* Alinear en columna */
+    /*justify-content: center; /* Centrar verticalmente */
+    background: linear-gradient(to top, #152a08 30%, #236824 70%);
+    background-repeat: no-repeat;
+    background-size: cover; /* Asegura que cubra todo el área */
+    overflow: hidden;
+}
+
+.alert {
+    height: 20%;
+}
+
+.logosize {
+    width: 10%;
+    height: 20%;
+}
+
+.form-input {
+    margin-bottom: 15px;
+}
+
+.register {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    margin-top: 16%;
+    min-height: calc(100vh - 16%); /* Ajusta para que ocupe todo el alto */
+}
+
+.register:after {
+    clear: both;
+}
+
+.register-left {
+    float: left;
+    width: 27%;
+    text-align: center;
+    color: #fff;
+    position: relative; 
+    top: -25px; 
+}
+
+.register-right {
+    float: left;
+    text-align: center;
+    width: 27%;
+    position: relative; 
+    top: -40px; 
+}
+
+.form-input{
+    width: 100%;
+    padding: 12px; /* Espacio interno para que el texto no toque los bordes */
+    border: 2px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente más grande */
+    transition: border-color 0.3s ease; /* Transición suave para el borde */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: border-color 0.3s ease;
+}
+
+/* Media queries para responsive */
+@media screen and (max-width: 768px) {
+    .register-left,
+    .register-right {
+        float: none;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .register-left,
+    .register-right {
+        float: none;
+        width: 95%;
+    }
+}
+
+.register-left img {
+    width: 25%;
+    -webkit-animation: mover 2s infinite alternate;
+    animation: mover 1s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+#login.active {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    z-index: 100;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transition: all ease-out 0.2s 0.1s;
+    transition: all ease-out 0.2s 0.1s;
+}
+
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .toggle-password:focus {
+    outline: none;
+  }
+  

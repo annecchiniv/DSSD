@@ -1,0 +1,476 @@
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+
+  }
+.body {
+    background-color: #ebebeb;
+    font-family: 'Verdana', helvetica, sans-serif;
+}
+
+.logosize {
+    display: inline-block; 
+    vertical-align: middle; 
+    width: 400px; 
+    height: 300px; 
+}
+
+.dropbtn{
+    color: rgb(255, 255, 255) !important;
+    margin-right: 500%;
+    margin-left: -30%;
+    margin-bottom: -30%;
+}
+
+.dropbtn:hover {
+    background-color: #004c1b; /* Cambia el color al pasar el cursor */
+    transform: scale(1.00); /* Agranda ligeramente el botón */
+}
+
+.dropbtn:active {
+    background-color: #00d131; /* Color más oscuro cuando se presiona */
+    color: #77ff00; /* Cambia el color del texto al hacer clic */
+    transform: scale(1); /* Restaura el tamaño cuando se presiona */
+  }
+
+.linkCerrarSesion{
+    padding-left: -10%;
+}
+
+@media screen and (max-width: 360px) {
+    .body {
+        font-size: 5vw;
+    }
+
+    .btn {
+        font-size: 5vw !important;
+        padding: 6px 0px !important;
+        width: 30% !important;
+    }
+}
+
+.alert {
+    margin-right: 60%;
+    left: 30%
+}
+
+.navcolor {
+    background-color: #152a08;
+    color: white
+}
+
+.cdve {
+    color: white
+}
+
+.topnav {
+    overflow: hidden;
+    /*background-color: #131212*/
+    background-color: #152a08
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+}
+
+.topnav a:hover {
+    background-color: #ebebeb;
+    text-decoration: none;
+    color: black;
+}
+
+.topnav .icon {
+    display: none;
+    font-size: 15px;
+}
+
+.content-router {
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin relleno */
+  }
+
+@media screen and (max-width: 768px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .topnav a.session {
+        display: none;
+    }
+}
+
+.title {
+    color: #94c026;
+    text-align: center;
+    padding: 2%;
+
+}
+
+.link{
+    text-decoration: none;
+}
+.link:hover .title {
+    color: #005312; /* Color del título en hover */
+}
+
+@media screen and (max-width: 360px) {
+    .title {
+        font-size: 10vw
+    }
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.active {
+    background: #ebebeb;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0; /* Asegúrate de que no haya margen en el contenedor */
+    padding: 0; /* Elimina cualquier relleno */
+}
+
+.cardContainer:after {
+    clear: both;
+}
+
+.card {
+    background-color: white;
+    float: left;
+    margin: 3%;
+    width: 20%;
+    border-radius: 15%;
+    text-align: center;
+}
+.card:hover{
+    transform: translateY(-5px); /* Mueve la card ligeramente hacia arriba */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+.logo{
+    width: -50px;
+    height: 0%;
+}
+
+@media screen and (max-width: 768px) {
+    div.card {
+        float: none;
+        width: 60%;
+
+    }
+}
+
+@media screen and (max-width: 320px) {
+    div.card {
+        float: none;
+        width: 90%;
+
+    }
+}
+
+table {
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+
+    tr td:first-child {
+        background: #f0f0f0;
+        font-weight: bold;
+    }
+
+    tbody td {
+        display: block;
+        text-align: center;
+    }
+
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align: center;
+    }
+}
+
+.img-card {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.container {
+    background-color: white;
+    margin: 0 auto;
+    width: 65%;
+    border-radius: 8px;
+    padding: 1% 5%;
+    margin-top: 50px;
+    overflow: hidden
+        /*si no lo pongo se corta el contenedor x visible default*/
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .container {
+        width: 95%;
+
+    }
+}
+
+.mainContainer {
+    width: 100%;
+    margin-top: 1%
+}
+
+.mainContainerCenter {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin-top: 1%
+}
+
+.lFloat {
+    float: left;
+    width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+    div.lFloat {
+        float: none;
+        width: 100%;
+        margin: 2%;
+
+    }
+}
+
+.floatColor {
+    float: left;
+    width: 25%;
+
+}
+
+@media screen and (max-width: 768px) {
+    div.floatColor {
+        float: none;
+        width: 100%;
+        margin: 2%;
+
+    }
+}
+
+.searchContainer {
+    background-color: white;
+    width: 65%;
+    border-radius: 8px;
+    margin-left: 10%;
+
+}
+
+@media screen and (max-width: 768px) {
+    div.searchContainer {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 2%;
+
+    }
+}
+
+@media screen and (max-width: 360px) {
+    div.searchContainer {
+        width: 95%;
+        margin: auto;
+        margin-bottom: 2%;
+
+    }
+}
+
+.wminput {
+    width: 60%;
+    margin: 1%;
+}
+
+@media screen and (max-width: 768px) {
+    .wminput {
+        width: 80%;
+        margin: 1%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .wminput {
+        width: 95%;
+        margin: 1%;
+    }
+}
+
+.round {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    margin-bottom: 2%;
+    padding: 3%;
+}
+
+@media screen and (max-width: 768px) {
+    div.round {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 2%;
+
+    }
+}
+
+@media screen and (max-width: 360px) {
+    div.round {
+        width: 95%;
+        margin: auto;
+        margin-bottom: 2%;
+
+    }
+}
+
+.icon {
+    font-size: 25px;
+    color: white;
+}
+
+div.round:hover {
+    background-color: rgba(144, 179, 224, 0.3);
+}
+
+
+@media screen and (max-width: 962px) {
+    .second-nav {
+        display: none;
+
+    }
+}
+
+
+.center {
+    text-align: center;
+}
+
+.pbt {
+    padding: 2%;
+    padding-left: 0%;
+}
+
+.center-form {
+    position: relative;
+}
+
+.hijo-center-form {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dropbtn {
+    background-color: Transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    float: right;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    top: calc(100% + 30px);
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown {
+        display: none;
+
+    }
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
