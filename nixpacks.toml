@@ -2,7 +2,11 @@
 version = "0.1"
 
 [build]
-  builder = "python"
+builder = "python"
+commands = [
+  "pip install --upgrade pip",
+  "pip install -r backend/requirements.txt"
+]
 
 [web]
-  cmd = "cd backend && gunicorn -w 4 -b 0.0.0.0:8000 app:app"
+cmd = "cd backend && gunicorn -w 4 -b 0.0.0.0:8000 app:app"
