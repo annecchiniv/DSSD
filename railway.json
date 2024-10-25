@@ -1,6 +1,6 @@
 {
     "build": {
-      "dockerfilePath": "Dockerfile", // Esto es solo para el proyecto raíz
+      "dockerfilePath": "Dockerfile",
       "context": "."
     },
     "deploy": {
