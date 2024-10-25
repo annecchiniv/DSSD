@@ -13,8 +13,10 @@ RUN npm install
 # Copia el resto del código fuente del frontend
 COPY . .
 
+RUN npm run build
+
 # Expone el puerto en el que corre la aplicación (ajusta el puerto según tu configuración)
 EXPOSE 8080
 
 # Comando para ejecutar la aplicación
-CMD ["npm", "start"]
+CMD ["npx", "serve", "-s", "-dist"]
